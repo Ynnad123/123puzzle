@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passcode Protected Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    .protected { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Enter Passcode</h2>
+<input type="password" id="passInput" placeholder="Enter passcode">
+<button onclick="checkPass()">Unlock</button>
+
+<div id="message1" class="protected">
+  <h1>Secret Message 1</h1>
+  <p>. - / - ..- --..-- / -... .-. ..- - . .-.-.- / - .- -.- . / - .... .. ... / .- ... / .- / .... .. -. - / - --- / - .... . / -. . -..- - / -.. . -.-. .. .--. .... . .-. / .- -. -.. / - .... . / -. . -..- - / .--. .- ... ... -.-. --- -.. .</p>
+</div>
+
+<div id="message2" class="protected">
+  <h1>Secret Message 2</h1>
+  <p>Sp0aSpHbSZHbSp4nSp4bPJ0bSZ4nSZ0aPJ0bSpHbPJ8nSp0aSZ0nSp4aSZ0nSp4bSZ0nSfHbSpHbSp4nSfHaPJ4bSp4nSpHcPJ0bSZHbPJ0bSZ0nSfHaPJ0aSZHcPJ0nSp4bSpHbPJ8nSZ4aSpHbSp4bPJ0aSZHaSp0bPJ0aSZHbSZ4bPJ4aPJ0nSpHbSp4nSfHbSZHaSpHaSp4nSfHaPJ4bSp4nSpHcPJ0bSZ4nSp0bPJ4bPJ4bSpHbSZ0bPJ8nSp4bSp4nSfHaSp4bPJ4bPJ4aSp4nSp0bSn====</p>
+</div>
+
+<script>
+function checkPass() {
+    const pass = document.getElementById("passInput").value;
+
+    if (pass === ".. / -.. --- -. .----. - / .-.. .. -.- . / - .... . / ... -. --- .--d") {
+        document.getElementById("message1").style.display = "block";
+        document.getElementById("message2").style.display = "none";
+    } 
+    else if (pass === ""-jhlzhy") {
+        document.getElementById("message2").style.display = "block";
+        document.getElementById("message1").style.display = "none";
+    } 
+    else {
+        alert("Wrong passcode!");
+        document.getElementById("message1").style.display = "none";
+        document.getElementById("message2").style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
