@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passcode Protected Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    .protected { display: none; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h2>Enter Passcode</h2>
+<input type="password" id="passInput" placeholder="Enter passcode">
+<button onclick="checkPass()">Unlock</button>
+
+<div id="message1" class="protected">
+  <h1>Secret Message 1</h1>
+  <p>. - / - ..- --..-- / -... .-. ..- - . .-.-.- / - .- -.- . / - .... .. ... / .- ... / .- / .... .. -. - / - --- / - .... . / -. . -..- - / -.. . -.-. .. .--. .... . .-. / .- -. -.. / - .... . / -. . -..- - / .--. .- ... ... -.-. --- -.. .</p>
+</div>
+
+<div id="message2" class="protected">
+  <h1>Secret Message 2</h1>
+  <p>SZ0bSpHaSZHbSZ4bPJ0bSZ0nSZ4aSpHbSp4aSZHaSZ4aPJ0aSpHaSp4bPJ4bSZ0aPJ4bSp4bPJ4aSp4nSp4nSZ0bPJ4aSp4nSZ0bSpHbSpHaSZ4nSp0bPJ4bSp0nSZ4bSpHaSZHbSp0nSZ0bPJ4aPJ4bSp4nSp4bSZHaSZ0nSp0aSpHaSp0aPJ0bSp4nSp4bSZHbSZHbSp0aSZHbSp0bPJ4bSp4bPJ4bPJ0aSpHaSp4nSp4bSZHaSp4bPJ4bSZ0aPJ0aSp0nSZ0bPJ0aSp4nSZ0nSZ0aSZ4nSZ4aSZHbSpHbSp4bPJ4aSp4nSp4bSZHaSp4nSp4bPJ4bSp4aPJ0aSpHbPJ4aSZHaSZ0aSpHbSZ0aSZHbSpHaSZ4nSp4bSpHbSp4bPJ0bSpHaSZHbSp0nSZ0bPJ0bSpHbSp0aSZHaSZ0aSpHbSp0nSp4nSZ4bPJ4bSZHaSZ4nSZ0bSpHaSZ4nSZ0aSZ4nSp4bPJ0bSp4nSZ0bPJ4bSZ4nSZ4aSZHaSp0bPJ0bSZ0nSZ4bSpHbSp4bPJ0bSp4nSZ0nSZ0bSZHaSZ4nSZ0nSp4nSZ4bSpHbSZ0aPJ4aPJ0aSpHaSZ0aSpHbSZ0aPJ0bSp4nSp4aSZ0nSZ4bSZHbSp4bPJ0bSpHaSZ4nSp4bSZHaSZ4bPJ4aSp4nSZ0bPJ0bSp4aPJ0bSp4a====</p>
+</div>
+
+<script>
+function checkPass() {
+    const pass = document.getElementById("passInput").value;
+
+    if (pass === ".. / -.. --- -. .----. - / .-.. .. -.- . / - .... . / ... -. --- .--d") {
+        document.getElementById("message1").style.display = "block";
+        document.getElementById("message2").style.display = "none";
+    } 
+    else if (pass === ""-jhlzhy") {
+        document.getElementById("message2").style.display = "block";
+        document.getElementById("message1").style.display = "none";
+    } 
+    else {
+        alert("Wrong passcode!");
+        document.getElementById("message1").style.display = "none";
+        document.getElementById("message2").style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
